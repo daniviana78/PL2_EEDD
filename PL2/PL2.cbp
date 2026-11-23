@@ -33,14 +33,19 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="arboles.cpp" />
-		<Unit filename="arboles.h" />
+		<Unit filename="arboles.h">
+			<Option compile="1" />
+		</Unit>
 		<Unit filename="listas_dobles.cpp" />
-		<Unit filename="listas_dobles.h" />
+		<Unit filename="listas_dobles.h">
+			<Option compile="1" />
+		</Unit>
 		<Unit filename="main.cpp" />
 		<Unit filename="napoli.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="napoli.h">
+			<Option compile="1" />
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Extensions />

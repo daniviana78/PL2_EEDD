@@ -161,17 +161,17 @@ void ArbolABB::PostOrden(void (*func)(CentroVenta&), Nodo *nodo, bool r)
 }
 
 // Buscar un valor en el árbol
-bool ArbolABB::Buscar(const int dat)
+CentroVenta* ArbolABB::Buscar(const int dat)
 {
    actual = raiz;
 
    // Todavía puede aparecer, ya que quedan nodos por mirar
    while(!Vacio(actual)) {
-      if(dat == actual->dato.id_centro) return true; // int encontrado
+      if(dat == actual->dato.id_centro) return &actual->dato; // int encontrado
       else if(dat > actual->dato.id_centro) actual = actual->derecho; // Seguir
       else if(dat < actual->dato.id_centro) actual = actual->izquierdo;
    }
-   return false; // No está en árbol
+   return NULL; // No está en árbol
 }
 
 // Calcular la altura del nodo que contiene el int dat

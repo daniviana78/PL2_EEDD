@@ -150,7 +150,7 @@ Venta Lista::valorActual()
 {
     if (!listaVacia()) return actual->valor;
     else{
-        Venta vacia = {0, "", "", "", 0, ""};
+        Venta vacia = {0, "", "", "", 0, {0,0,0}};
         return vacia;
     };
 }

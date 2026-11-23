@@ -40,7 +40,7 @@ class ArbolABB
         // Borrar un elemento del árbol:
         void Borrar(const int dat);
         // Función de búsqueda:
-        bool Buscar(const int dat);
+        CentroVenta* Buscar(const int dat);
         // Comprobar si el árbol está vacío:
         bool Vacio(Nodo *r);
         // Comprobar si es un nodo hoja:
