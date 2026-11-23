@@ -3,19 +3,21 @@
 
 #include <iostream>
 
+#include "napoli.h"
+
 
 class Nodo
 {
     private:
         // Miembros:
-        int dato;
+        CentroVenta dato;
         Nodo *izquierdo;
         Nodo *derecho;
         friend class ArbolABB;
 
     public:
         // Constructor:
-        Nodo(const int dat, Nodo *izq=NULL, Nodo *der=NULL) :
+        Nodo(const CentroVenta dat, Nodo *izq=NULL, Nodo *der=NULL) :
             dato(dat), izquierdo(izq), derecho(der) {}
 
 };
@@ -34,7 +36,7 @@ class ArbolABB
         ArbolABB() : raiz(NULL), actual(NULL) {}
         ~ArbolABB();
          // Insertar en árbol ordenado:
-        void Insertar(const int dat);
+        void Insertar(const CentroVenta dat);
         // Borrar un elemento del árbol:
         void Borrar(const int dat);
         // Función de búsqueda:
@@ -46,14 +48,14 @@ class ArbolABB
         // Contar número de nodos:
         const int NumeroNodos();
         const int AlturaArbol();
-        // Calcular altura de un int:
+        // Calcular altura de un CentroVenta:
         int Altura(const int dat);
         // Moverse al nodo raiz:
         void Raiz();
         // Aplicar una función a cada elemento del árbol:
-        void InOrden(void (*func)(int&), Nodo *nodo=NULL, bool r=true);
-        void PreOrden(void (*func)(int&), Nodo *nodo=NULL, bool r=true);
-        void PostOrden(void (*func)(int&), Nodo *nodo=NULL, bool r=true);
+        void InOrden(void (*func)(CentroVenta&), Nodo *nodo=NULL, bool r=true);
+        void PreOrden(void (*func)(CentroVenta&), Nodo *nodo=NULL, bool r=true);
+        void PostOrden(void (*func)(CentroVenta&), Nodo *nodo=NULL, bool r=true);
 
     private:
         // Funciones auxiliares

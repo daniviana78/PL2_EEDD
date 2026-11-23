@@ -3,19 +3,21 @@
 
 #include <iostream>
 
+#include "napoli.h"
+
 const int ASCENDENTE=0;
 const int DESCENDENTE=1;
 
 class Nodo
 {
     private:
-        int valor;
+        Venta valor;
         Nodo *siguiente;
         Nodo *anterior;
     friend class Lista;
 
     public:
-        Nodo(int v, Nodo *sig = NULL, Nodo *ant = NULL)
+        Nodo(Venta v, Nodo *sig = NULL, Nodo *ant = NULL)
         {
             valor = v;
             siguiente = sig;
@@ -32,7 +34,7 @@ class Lista
     public:
         Lista() {cabeza=actual=final=NULL; }
         ~Lista();
-        void insertarNodo(int v, char c);
+        void insertarNodo(Venta v, char c);
         void borrarNodo(char c);
         bool listaVacia();
         void esCabeza();
@@ -40,7 +42,7 @@ class Lista
         void esSiguiente();
         void esAnterior();
         bool esActual();
-        int valorActual();
+        Venta valorActual();
         void recorrerLista(int);
 };
 

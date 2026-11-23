@@ -17,7 +17,7 @@ Lista::~Lista()
     final=NULL;
 }
 
-void Lista::insertarNodo(int v, char c)
+void Lista::insertarNodo(Venta v, char c)
 {
     pnodo aux;
     char tipoInsercion;
@@ -99,7 +99,7 @@ void Lista::recorrerLista(int orden)
         aux = cabeza;
         while(aux)
         {
-            cout << aux->valor << "-> ";
+            cout << aux->valor.id_venta << "-> ";
             aux = aux->siguiente;
         }
     }
@@ -109,7 +109,7 @@ void Lista::recorrerLista(int orden)
         aux = final;
         while(aux)
         {
-            cout << aux->valor << "-> ";
+            cout << aux->valor.id_venta << "-> ";
             aux = aux->anterior;
         }
     }
@@ -146,10 +146,13 @@ bool Lista::esActual()
     return actual != NULL;
 }
 
-int Lista::valorActual()
+Venta Lista::valorActual()
 {
     if (!listaVacia()) return actual->valor;
-    else return 0;
+    else{
+        Venta vacia = {0, "", "", "", 0, ""};
+        return vacia;
+    };
 }
 
 

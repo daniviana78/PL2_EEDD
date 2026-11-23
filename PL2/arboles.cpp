@@ -39,16 +39,16 @@ void ArbolABB::Podar(Nodo* &nodo)
 }
 
 // Insertar un int en el árbol ABB
-void ArbolABB::Insertar(const int dat)
+void ArbolABB::Insertar(const CentroVenta dat)
 {
    Nodo *padre = NULL;
 
    actual = raiz;
    // Buscar el int en el árbol, manteniendo un puntero al nodo padre
-   while(!Vacio(actual) && dat != actual->dato) {
+   while(!Vacio(actual) && dat.id_centro != actual->dato.id_centro) {
       padre = actual;
-      if(dat > actual->dato) actual = actual->derecho;
-      else if(dat < actual->dato) actual = actual->izquierdo;
+      if(dat.id_centro > actual->dato.id_centro) actual = actual->derecho;
+      else if(dat.id_centro < actual->dato.id_centro) actual = actual->izquierdo;
    }
 
    // Si se ha encontrado el elemento, regresar sin insertar
@@ -58,10 +58,10 @@ void ArbolABB::Insertar(const int dat)
    if(Vacio(padre)) raiz = new Nodo(dat);
    // Si el int es menor que el que contiene el nodo padre, lo insertamos
    // en la rama izquierda
-   else if(dat < padre->dato) padre->izquierdo = new Nodo(dat);
+   else if(dat.id_centro < padre->dato.id_centro) padre->izquierdo = new Nodo(dat);
    // Si el int es mayor que el que contiene el nodo padre, lo insertamos
    // en la rama derecha
-   else if(dat > padre->dato) padre->derecho = new Nodo(dat);
+   else if(dat.id_centro > padre->dato.id_centro) padre->derecho = new Nodo(dat);
 }
 
 // Eliminar un elemento de un árbol ABB
@@ -69,12 +69,12 @@ void ArbolABB::Borrar(const int dat)
 {
    Nodo *padre = NULL;
    Nodo *nodo;
-   int aux;
+   CentroVenta aux;
 
    actual = raiz;
    // Mientras sea posible que el valor esté en el árbol
    while(!Vacio(actual)) {
-      if(dat == actual->dato) { // Si el valor está en el nodo actual
+      if(dat == actual->dato.id_centro) { // Si el valor está en el nodo actual
          if(EsHoja(actual)) { // Y si además es un nodo hoja: lo borramos
             if(padre){ // Si tiene padre (no es el nodo raiz)
                // Anulamos el puntero que le hace referencia
@@ -118,8 +118,8 @@ void ArbolABB::Borrar(const int dat)
       }
       else { // Todavía no hemos encontrado el valor, seguir buscándolo
          padre = actual;
-         if(dat > actual->dato) actual = actual->derecho;
-         else if(dat < actual->dato) actual = actual->izquierdo;
+         if(dat > actual->dato.id_centro) actual = actual->derecho;
+         else if(dat < actual->dato.id_centro) actual = actual->izquierdo;
       }
    }
 }
@@ -127,7 +127,7 @@ void ArbolABB::Borrar(const int dat)
 // Recorrido de árbol en inorden, aplicamos la función func, que tiene
 // el prototipo:
 // void func(int&);
-void ArbolABB::InOrden(void (*func)(int&) , Nodo *nodo, bool r)
+void ArbolABB::InOrden(void (*func)(CentroVenta&) , Nodo *nodo, bool r)
 {
   if (raiz==NULL) {cout<<"Arbol vacio"<<endl; return;}
    if(r) nodo = raiz;
@@ -139,7 +139,7 @@ void ArbolABB::InOrden(void (*func)(int&) , Nodo *nodo, bool r)
 // Recorrido de árbol en preorden, aplicamos la función func, que tiene
 // el prototipo:
 // void func(int&);
-void ArbolABB::PreOrden(void (*func)(int&), Nodo *nodo, bool r)
+void ArbolABB::PreOrden(void (*func)(CentroVenta&), Nodo *nodo, bool r)
 {
       if (raiz==NULL) {cout<<"Arbol vacio"<<endl; return;}
    if(r) nodo = raiz;
@@ -151,7 +151,7 @@ void ArbolABB::PreOrden(void (*func)(int&), Nodo *nodo, bool r)
 // Recorrido de árbol en postorden, aplicamos la función func, que tiene
 // el prototipo:
 // void func(int&);
-void ArbolABB::PostOrden(void (*func)(int&), Nodo *nodo, bool r)
+void ArbolABB::PostOrden(void (*func)(CentroVenta&), Nodo *nodo, bool r)
 {
       if (raiz==NULL) {cout<<"Arbol vacio"<<endl; return;}
    if(r) nodo = raiz;
@@ -167,9 +167,9 @@ bool ArbolABB::Buscar(const int dat)
 
    // Todavía puede aparecer, ya que quedan nodos por mirar
    while(!Vacio(actual)) {
-      if(dat == actual->dato) return true; // int encontrado
-      else if(dat > actual->dato) actual = actual->derecho; // Seguir
-      else if(dat < actual->dato) actual = actual->izquierdo;
+      if(dat == actual->dato.id_centro) return true; // int encontrado
+      else if(dat > actual->dato.id_centro) actual = actual->derecho; // Seguir
+      else if(dat < actual->dato.id_centro) actual = actual->izquierdo;
    }
    return false; // No está en árbol
 }
@@ -182,11 +182,11 @@ int ArbolABB::Altura(const int dat)
 
    // Todavía puede aparecer, ya que quedan nodos por mirar
    while(!Vacio(actual)) {
-      if(dat == actual->dato) return altura; // int encontrado
+      if(dat == actual->dato.id_centro) return altura; // int encontrado
       else {
          altura++; // Incrementamos la altura, seguimos buscando
-         if(dat > actual->dato) actual = actual->derecho;
-         else if(dat < actual->dato) actual = actual->izquierdo;
+         if(dat > actual->dato.id_centro) actual = actual->derecho;
+         else if(dat < actual->dato.id_centro) actual = actual->izquierdo;
       }
    }
    return -1; // No está en árbol

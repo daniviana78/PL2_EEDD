@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1794993927 source:c:\users\dani viana\documents\github\pl2_eedd\pl2\listas_dobles.cpp
+	"listas_dobles.h"
+
+1794993927 c:\users\dani viana\documents\github\pl2_eedd\pl2\listas_dobles.h
+	<iostream>
+
+1794993927 source:c:\users\dani viana\documents\github\pl2_eedd\pl2\main.cpp
+	<iostream>
+
+1795431243 source:c:\users\dani viana\documents\github\pl2_eedd\pl2\arboles.cpp
+	"arboles.h"
+
+1795435578 c:\users\dani viana\documents\github\pl2_eedd\pl2\arboles.h
+	<iostream>
+	"napoli.h"
+
+1795436529 c:\users\dani viana\documents\github\pl2_eedd\pl2\napoli.h
+
