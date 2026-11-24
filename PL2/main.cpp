@@ -21,7 +21,7 @@ int main()
     cout << "Creando el ABB con " << N_CENTROS << " centros:" << endl;
     generarCentros(arbol, ids);
     cout << "Arbol inicial:" << endl;
-    mostrarCentros(arbol);
+    arbol.InOrden(mostrarCentro);
 
     cout << endl << "Ventas nuevas:" << endl;
     cout << "|" << setw(10) << "ID Centro" << "|" << setw(9) << "ID Venta" << "|"
@@ -48,9 +48,9 @@ int main()
     }
 
     cout << endl << "Ventas distribuidas. Estado del arbol:" << endl;
-    mostrarCentros(arbol);
+    arbol.InOrden(mostrarCentro);
 
-int opcion;
+    int opcion;
     do
     {
         cout << endl << "Menu del programa:" << endl;

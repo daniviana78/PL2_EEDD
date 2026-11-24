@@ -76,10 +76,6 @@ void mostrarCentro(CentroVenta &c)
          << " Num ventas: " << n_ventas << endl;
 }
 
-void mostrarCentros(ArbolABB &arb)
-{
-    arb.InOrden(mostrarCentro);
-}
 
 void mostrarVenta(Venta v)
 {
@@ -109,12 +105,6 @@ void insertarCentro(ArbolABB &arb)
     int id;
     cout << "Introduce el ID: ";
     cin >> id;
-
-    if (id < 100 || id > 999)
-    {
-        cout << "Error: El identificador debe ser un numero de 3 cifras." << endl;
-        return;
-    }
 
     if (arb.Buscar(id) != NULL)
     {

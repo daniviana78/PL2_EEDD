@@ -59,14 +59,14 @@
 	"listas_dobles.h"
 	"arboles.h"
 
-1795518713 source:c:\users\portatil\desktop\pl2_eedd\pl2\arboles.cpp
+1795534619 source:c:\users\portatil\desktop\pl2_eedd\pl2\arboles.cpp
 	"arboles.h"
 
 1795518713 c:\users\portatil\desktop\pl2_eedd\pl2\arboles.h
 	<iostream>
 	"napoli.h"
 
-1795520615 c:\users\portatil\desktop\pl2_eedd\pl2\napoli.h
+1795531559 c:\users\portatil\desktop\pl2_eedd\pl2\napoli.h
 	<iostream>
 	<iomanip>
 	<string>
@@ -87,7 +87,7 @@
 	<iostream>
 	"napoli.h"
 
-1795521629 source:c:\users\portatil\desktop\pl2_eedd\pl2\main.cpp
+1795534619 source:c:\users\portatil\desktop\pl2_eedd\pl2\main.cpp
 	<iostream>
 	<ctime>
 	<iomanip>
@@ -95,7 +95,7 @@
 	"arboles.h"
 	"listas_dobles.h"
 
-1795521594 source:c:\users\portatil\desktop\pl2_eedd\pl2\napoli.cpp
+1795534642 source:c:\users\portatil\desktop\pl2_eedd\pl2\napoli.cpp
 	<iostream>
 	"napoli.h"
 	"listas_dobles.h"
