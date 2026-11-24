@@ -104,4 +104,52 @@ void mostrarVenta(Venta v)
          << setw(11) << fecha << "|" << endl;
 }
 
+void insertarCentro(ArbolABB &arb)
+{
+    int id;
+    cout << "Introduce el ID: ";
+    cin >> id;
 
+    if (id < 100 || id > 999)
+    {
+        cout << "Error: El identificador debe ser un numero de 3 cifras." << endl;
+        return;
+    }
+
+    if (arb.Buscar(id) != NULL)
+    {
+        cout << "Error: Ya existe un centro con ese id " << endl;
+        return;
+    }
+
+    string localidad;
+    cout << "Introduce la localidad del centro: ";
+    cin >> localidad;
+
+    CentroVenta nuevo;
+    nuevo.id_centro = id;
+    nuevo.localidad = localidad;
+    arb.Insertar(nuevo);
+
+}
+void borrarCentro(ArbolABB &arb)
+{
+    int id;
+    cout << "Introduce el ID del centro que quieres borrar: ";
+    cin >> id;
+
+    CentroVenta *c = arb.Buscar(id);
+    if (c == NULL)
+    {
+        cout << "Error: No existe ningun centro con ese id" << endl;
+        return;
+    }
+
+    while (!c->lista_ventas->listaVacia())
+    {
+        c->lista_ventas->borrarNodo('p');
+    }
+    delete c-> lista_ventas;
+
+    arb.Borrar(id);
+}

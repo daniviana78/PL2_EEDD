@@ -41,9 +41,7 @@
 			<Option compile="1" />
 		</Unit>
 		<Unit filename="main.cpp" />
-		<Unit filename="napoli.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="napoli.cpp" />
 		<Unit filename="napoli.h">
 			<Option compile="1" />
 			<Option target="&lt;{~None~}&gt;" />

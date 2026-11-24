@@ -50,6 +50,33 @@ int main()
     cout << endl << "Ventas distribuidas. Estado del arbol:" << endl;
     mostrarCentros(arbol);
 
+int opcion;
+    do
+    {
+        cout << endl << "Menu del programa:" << endl;
+        cout << "Opciones disponibles:" << endl;
+        cout << "1- Insertar un centro." << endl;
+        cout << "2- Borrar un centro." << endl;
+        cout << "0- Salir del programa." << endl;
+        cout << "Seleccione una opcion del menu: ";
+        cin >> opcion;
+
+        switch (opcion)
+        {
+            case 1:
+                insertarCentro(arbol);
+                break;
+            case 2:
+                borrarCentro(arbol);
+                break;
+            case 0:
+                cout << "Saliendo del programa" << endl;
+                break;
+            default:
+                cout << "Opcion no valida." << endl;
+                break;
+        }
+    } while (opcion != 0);
 
     return 0;
 

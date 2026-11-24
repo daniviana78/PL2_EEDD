@@ -46,6 +46,8 @@ Venta generarVenta(int id_centro, int contador);
 void mostrarCentro(CentroVenta &c);
 void mostrarCentros(ArbolABB &a);
 void mostrarVenta(Venta v);
+void insertarCentro(ArbolABB &arb);
+void borrarCentro(ArbolABB &arb);
 
 
 #endif // NAPOLI_H_INCLUDED
