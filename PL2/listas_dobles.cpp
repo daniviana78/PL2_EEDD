@@ -4,7 +4,7 @@ using namespace std;
 
 Lista::~Lista()
 {
-    pnodo aux;
+    pnodo_lista aux;
     esCabeza();
     while(cabeza)
     {
@@ -19,25 +19,25 @@ Lista::~Lista()
 
 void Lista::insertarNodo(Venta v, char c)
 {
-    pnodo aux;
+    pnodo_lista aux;
     char tipoInsercion;
     tipoInsercion=c;
 
     if(listaVacia())   // Si la lista está vacía
     {
-        aux = new Nodo(v,NULL,NULL);
+        aux = new NodoLista(v,NULL,NULL);
         final=cabeza=aux;
     }
     else if (tipoInsercion=='f')  //Inserción por el final
     {
-        aux= new Nodo(v,NULL,NULL);
+        aux= new NodoLista(v,NULL,NULL);
         aux->anterior=final;
         final->siguiente=aux;
         final=aux;
     }
     else if (tipoInsercion=='p')  //Inserción por el principio
     {
-        aux= new Nodo(v,NULL,NULL);
+        aux= new NodoLista(v,NULL,NULL);
         aux->siguiente=cabeza;
         cabeza->anterior=aux;
         cabeza=aux;
@@ -51,7 +51,7 @@ void Lista::borrarNodo(char c)
 
     if(tipoBorrado=='f')  //Eliminación por el final
     {
-        pnodo aux=NULL;
+        pnodo_lista aux=NULL;
         if((cabeza==final))   //Sólo hay 1 elemento
         {
             aux=final;
@@ -70,7 +70,7 @@ void Lista::borrarNodo(char c)
     }
     else if(tipoBorrado=='p')  //Eliminación por el Principio
     {
-        pnodo aux=NULL;
+        pnodo_lista aux=NULL;
         if((cabeza==final))  //Sólo hay 1 elemento
         {
             aux=cabeza;
@@ -91,7 +91,7 @@ void Lista::borrarNodo(char c)
 
 void Lista::recorrerLista(int orden)
 {
-    pnodo aux;
+    pnodo_lista aux;
 
     if (orden == ASCENDENTE)
     {

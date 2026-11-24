@@ -22,7 +22,7 @@ void generarCentros(ArbolABB &arb, int ids[])
             c.id_centro = 100 + rand() % 900;
         }
 
-        int pos_localidad= rand() % 20;
+        int pos_localidad= rand() % n_localidades;
         c.localidad = localidades[pos_localidad];
 
         localidades[pos_localidad]= localidades[n_localidades-1];

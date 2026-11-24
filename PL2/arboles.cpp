@@ -9,13 +9,13 @@ ArbolABB::~ArbolABB()
         }
 
 //Árbol vacío
-bool ArbolABB::Vacio(Nodo *r)
+bool ArbolABB::Vacio(NodoArbol *r)
         {
             return r==NULL;
         }
 
 //Nodo es de tipo hoja
-bool ArbolABB::EsHoja(Nodo *r)
+bool ArbolABB::EsHoja(NodoArbol *r)
         {
             return !r->derecho && !r->izquierdo;
         }
@@ -27,7 +27,7 @@ void ArbolABB::Raiz()
         }
 
 // Poda: borrar todos los nodos a partir de uno incluido
-void ArbolABB::Podar(Nodo* &nodo)
+void ArbolABB::Podar(NodoArbol* &nodo)
 {
    // Algoritmo recursivo, recorrido en postorden
    if(nodo) {
@@ -41,7 +41,7 @@ void ArbolABB::Podar(Nodo* &nodo)
 // Insertar un int en el árbol ABB
 void ArbolABB::Insertar(const CentroVenta dat)
 {
-   Nodo *padre = NULL;
+   NodoArbol *padre = NULL;
 
    actual = raiz;
    // Buscar el int en el árbol, manteniendo un puntero al nodo padre
@@ -55,20 +55,20 @@ void ArbolABB::Insertar(const CentroVenta dat)
    if(!Vacio(actual)) return;
    // Si padre es NULL, entonces el árbol estaba vacío, el nuevo nodo será
    // el nodo raiz
-   if(Vacio(padre)) raiz = new Nodo(dat);
+   if(Vacio(padre)) raiz = new NodoArbol(dat);
    // Si el int es menor que el que contiene el nodo padre, lo insertamos
    // en la rama izquierda
-   else if(dat.id_centro < padre->dato.id_centro) padre->izquierdo = new Nodo(dat);
+   else if(dat.id_centro < padre->dato.id_centro) padre->izquierdo = new NodoArbol(dat);
    // Si el int es mayor que el que contiene el nodo padre, lo insertamos
    // en la rama derecha
-   else if(dat.id_centro > padre->dato.id_centro) padre->derecho = new Nodo(dat);
+   else if(dat.id_centro > padre->dato.id_centro) padre->derecho = new NodoArbol(dat);
 }
 
 // Eliminar un elemento de un árbol ABB
 void ArbolABB::Borrar(const int dat)
 {
-   Nodo *padre = NULL;
-   Nodo *nodo;
+   NodoArbol *padre = NULL;
+   NodoArbol *nodo;
    CentroVenta aux;
 
    actual = raiz;
@@ -127,7 +127,7 @@ void ArbolABB::Borrar(const int dat)
 // Recorrido de árbol en inorden, aplicamos la función func, que tiene
 // el prototipo:
 // void func(int&);
-void ArbolABB::InOrden(void (*func)(CentroVenta&) , Nodo *nodo, bool r)
+void ArbolABB::InOrden(void (*func)(CentroVenta&) , NodoArbol *nodo, bool r)
 {
   if (raiz==NULL) {cout<<"Arbol vacio"<<endl; return;}
    if(r) nodo = raiz;
@@ -139,7 +139,7 @@ void ArbolABB::InOrden(void (*func)(CentroVenta&) , Nodo *nodo, bool r)
 // Recorrido de árbol en preorden, aplicamos la función func, que tiene
 // el prototipo:
 // void func(int&);
-void ArbolABB::PreOrden(void (*func)(CentroVenta&), Nodo *nodo, bool r)
+void ArbolABB::PreOrden(void (*func)(CentroVenta&), NodoArbol *nodo, bool r)
 {
       if (raiz==NULL) {cout<<"Arbol vacio"<<endl; return;}
    if(r) nodo = raiz;
@@ -151,7 +151,7 @@ void ArbolABB::PreOrden(void (*func)(CentroVenta&), Nodo *nodo, bool r)
 // Recorrido de árbol en postorden, aplicamos la función func, que tiene
 // el prototipo:
 // void func(int&);
-void ArbolABB::PostOrden(void (*func)(CentroVenta&), Nodo *nodo, bool r)
+void ArbolABB::PostOrden(void (*func)(CentroVenta&), NodoArbol *nodo, bool r)
 {
       if (raiz==NULL) {cout<<"Arbol vacio"<<endl; return;}
    if(r) nodo = raiz;
@@ -203,7 +203,7 @@ const int ArbolABB::NumeroNodos()
 
 // Función auxiliar para contar nodos. Función recursiva de recorrido en
 //   preorden, el proceso es aumentar el contador
-void ArbolABB::auxContador(Nodo *nodo)
+void ArbolABB::auxContador(NodoArbol *nodo)
 {
    contador++;  // Otro nodo
    // Continuar recorrido
@@ -223,7 +223,7 @@ const int ArbolABB::AlturaArbol()
 // Función auxiliar para calcular altura. Función recursiva de recorrido en
 // postorden, el proceso es actualizar la altura sólo en nodos hojas de mayor
 // altura de la máxima actual
-void ArbolABB::auxAltura(Nodo *nodo, int a)
+void ArbolABB::auxAltura(NodoArbol *nodo, int a)
 {
    // Recorrido postorden
    if(nodo->izquierdo) auxAltura(nodo->izquierdo, a+1);

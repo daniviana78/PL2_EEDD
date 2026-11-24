@@ -17,39 +17,45 @@
 
 1795436529 c:\users\dani viana\documents\github\pl2_eedd\pl2\napoli.h
 
-1795460866 source:c:\users\user\documents\github\pl2_eedd\pl2\arboles.cpp
+1795479151 source:c:\users\user\documents\github\pl2_eedd\pl2\arboles.cpp
 	"arboles.h"
 
-1795460834 c:\users\user\documents\github\pl2_eedd\pl2\arboles.h
+1795479151 c:\users\user\documents\github\pl2_eedd\pl2\arboles.h
 	<iostream>
 	"napoli.h"
 
-1795460567 c:\users\user\documents\github\pl2_eedd\pl2\napoli.h
+1795479420 c:\users\user\documents\github\pl2_eedd\pl2\napoli.h
 	<iostream>
 	<iomanip>
 	<string>
 	<cstdlib>
 
-1795460834 source:c:\users\user\documents\github\pl2_eedd\pl2\arboles.h
+1795479151 source:c:\users\user\documents\github\pl2_eedd\pl2\arboles.h
 	<iostream>
 	"napoli.h"
 
-1795460567 source:c:\users\user\documents\github\pl2_eedd\pl2\listas_dobles.h
+1795479151 source:c:\users\user\documents\github\pl2_eedd\pl2\listas_dobles.h
 	<iostream>
 	"napoli.h"
 
-1795460578 source:c:\users\user\documents\github\pl2_eedd\pl2\listas_dobles.cpp
+1795479151 source:c:\users\user\documents\github\pl2_eedd\pl2\listas_dobles.cpp
 	"listas_dobles.h"
 
-1795460567 c:\users\user\documents\github\pl2_eedd\pl2\listas_dobles.h
+1795479151 c:\users\user\documents\github\pl2_eedd\pl2\listas_dobles.h
 	<iostream>
 	"napoli.h"
 
-1795459504 source:c:\users\user\documents\github\pl2_eedd\pl2\main.cpp
+1795479415 source:c:\users\user\documents\github\pl2_eedd\pl2\main.cpp
 	<iostream>
 	<ctime>
 	<iomanip>
 	"napoli.h"
 	"arboles.h"
 	"listas_dobles.h"
+
+1795479767 source:c:\users\user\documents\github\pl2_eedd\pl2\napoli.cpp
+	<iostream>
+	"napoli.h"
+	"listas_dobles.h"
+	"arboles.h"
 

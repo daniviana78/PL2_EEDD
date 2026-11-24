@@ -8,28 +8,28 @@
 const int ASCENDENTE=0;
 const int DESCENDENTE=1;
 
-class Nodo
+class NodoLista
 {
     private:
         Venta valor;
-        Nodo *siguiente;
-        Nodo *anterior;
+        NodoLista *siguiente;
+        NodoLista *anterior;
     friend class Lista;
 
     public:
-        Nodo(Venta v, Nodo *sig = NULL, Nodo *ant = NULL)
+        NodoLista(Venta v, NodoLista *sig = NULL, NodoLista *ant = NULL)
         {
             valor = v;
             siguiente = sig;
             anterior = ant;
         }
 };
-typedef Nodo *pnodo;
+typedef NodoLista *pnodo_lista;
 
 class Lista
 {
     private:
-        pnodo cabeza, final, actual;
+        pnodo_lista cabeza, final, actual;
 
     public:
         Lista() {cabeza=actual=final=NULL; }
